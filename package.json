@@ -17,7 +17,8 @@
     "@strapi/plugin-users-permissions": "4.1.11",
     "@strapi/strapi": "4.1.11",
     "better-sqlite3": "7.4.6",
-    "strapi-plugin-navigation": "^2.0.13"
+    "strapi-plugin-navigation": "^2.0.13",
+    "strapi-provider-upload-imagekit": "^4.0.2"
   },
   "author": {
     "name": "A Strapi developer"
