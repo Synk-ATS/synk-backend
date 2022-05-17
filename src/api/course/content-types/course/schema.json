@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course",
     "pluralName": "courses",
-    "displayName": "Course"
+    "displayName": "Course",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,12 +27,8 @@
     "faculty": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::faculty.faculty"
-    },
-    "teachers": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::teacher.teacher"
+      "target": "api::faculty.faculty",
+      "inversedBy": "course"
     }
   }
 }
