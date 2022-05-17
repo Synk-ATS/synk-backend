@@ -53,7 +53,8 @@
     "course": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::course.course"
+      "target": "api::course.course",
+      "mappedBy": "faculty"
     }
   }
 }
