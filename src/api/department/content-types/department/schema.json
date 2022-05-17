@@ -16,6 +16,12 @@
     },
     "description": {
       "type": "string"
+    },
+    "faculties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faculty.faculty",
+      "mappedBy": "department"
     }
   }
 }
