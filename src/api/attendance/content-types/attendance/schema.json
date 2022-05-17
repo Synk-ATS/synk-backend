@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "singularName": "attendance",
+    "pluralName": "attendances",
+    "displayName": "Attendance"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    },
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::student.student"
+    },
+    "status": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "faculty": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::faculty.faculty"
+    }
+  }
+}
