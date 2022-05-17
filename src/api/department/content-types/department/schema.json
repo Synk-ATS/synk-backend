@@ -22,6 +22,12 @@
       "relation": "oneToMany",
       "target": "api::faculty.faculty",
       "mappedBy": "department"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "department"
     }
   }
 }
