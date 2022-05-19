@@ -1,24 +1,22 @@
 {
   "kind": "collectionType",
-  "collectionName": "users-permissions_user",
+  "collectionName": "up_users",
   "info": {
     "name": "user",
-    "description": ""
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
   },
   "options": {
     "draftAndPublish": false,
     "timestamps": true
   },
   "attributes": {
-    "firstName": {
+    "username": {
       "type": "string",
       "minLength": 3,
-      "configurable": false,
-      "required": true
-    },
-    "lastName": {
-      "type": "string",
-      "minLength": 3,
+      "unique": true,
       "configurable": false,
       "required": true
     },
@@ -27,11 +25,6 @@
       "minLength": 6,
       "configurable": false,
       "required": true
-    },
-    "avatar": {
-      "type": "string",
-      "configurable": false,
-      "required": false
     },
     "provider": {
       "type": "string",
@@ -64,10 +57,17 @@
       "configurable": false
     },
     "role": {
-      "model": "role",
-      "via": "users",
-      "plugin": "users-permissions",
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
       "configurable": false
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
     }
   }
 }
