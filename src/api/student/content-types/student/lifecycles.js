@@ -45,6 +45,12 @@ module.exports = {
               uid: getStudentId(result.id),
             }
           });
+          await strapi.db.query('plugin::users-permissions.user').update({
+            where: { email:email },
+            data: {
+              avatar: { ...result.avatar }
+            }
+          });
         });
       } catch (e) {
         console.log(e.errors)
@@ -72,6 +78,12 @@ module.exports = {
           data: {
             email: res.email,
             uid: getStudentId(result.id),
+          }
+        });
+        await strapi.db.query('plugin::users-permissions.user').update({
+          where: { email:email },
+          data: {
+            avatar: { ...result.avatar }
           }
         });
       });
