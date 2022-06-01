@@ -55,6 +55,26 @@
       "relation": "oneToOne",
       "target": "api::course.course",
       "mappedBy": "faculty"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "phone": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "middleName": {
+      "type": "string"
     }
   }
 }
