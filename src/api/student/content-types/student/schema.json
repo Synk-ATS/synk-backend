@@ -4,7 +4,8 @@
   "info": {
     "singularName": "student",
     "pluralName": "students",
-    "displayName": "Student"
+    "displayName": "Student",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,14 +29,8 @@
     },
     "email": {
       "type": "email",
-      "required": true,
+      "required": false,
       "unique": true
-    },
-    "password": {
-      "type": "password",
-      "required": true,
-      "minLength": 8,
-      "private": true
     },
     "level": {
       "type": "enumeration",
@@ -58,11 +53,32 @@
       "target": "api::course.course"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
     }
   }
 }
