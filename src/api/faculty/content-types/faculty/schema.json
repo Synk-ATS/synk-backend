@@ -20,7 +20,7 @@
       "type": "string",
       "required": true
     },
-    "facultyId": {
+    "uid": {
       "type": "string",
       "required": false,
       "unique": true
