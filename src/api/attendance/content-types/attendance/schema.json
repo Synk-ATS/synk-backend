@@ -12,21 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "course": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::course.course"
-    },
-    "student": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::student.student"
-    },
-    "status": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "faculty": {
       "type": "relation",
       "relation": "oneToOne",
@@ -35,6 +20,26 @@
     "date": {
       "required": true,
       "type": "date"
+    },
+    "content": {
+      "type": "json"
+    },
+    "open": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "timer": {
+      "type": "integer",
+      "default": 60,
+      "max": 120,
+      "min": 60
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "attendances"
     }
   }
 }

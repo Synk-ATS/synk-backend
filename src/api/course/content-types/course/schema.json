@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "course_code": {
+    "code": {
       "type": "string",
       "required": true,
       "unique": true
@@ -24,17 +24,28 @@
     "description": {
       "type": "text"
     },
-    "faculty": {
+    "program": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::faculty.faculty",
-      "inversedBy": "course"
+      "target": "api::program.program"
     },
-    "department": {
+    "faculties": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::department.department",
-      "inversedBy": "courses"
+      "relation": "oneToMany",
+      "target": "api::faculty.faculty",
+      "mappedBy": "course"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student.student",
+      "mappedBy": "courses"
+    },
+    "attendances": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attendance.attendance",
+      "mappedBy": "course"
     }
   }
 }

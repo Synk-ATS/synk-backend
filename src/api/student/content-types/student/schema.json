@@ -42,15 +42,11 @@
         "Level 500"
       ]
     },
-    "department": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::department.department"
-    },
     "courses": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::course.course"
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "students"
     },
     "avatar": {
       "type": "media",
@@ -79,6 +75,25 @@
     },
     "uid": {
       "type": "string"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
+    },
+    "program": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::program.program"
+    },
+    "faceDescriptor": {
+      "type": "text"
+    },
+    "photoData": {
+      "type": "text"
+    },
+    "attendanceRecord": {
+      "type": "json"
     }
   }
 }

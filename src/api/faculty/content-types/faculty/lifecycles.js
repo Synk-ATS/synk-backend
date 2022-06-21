@@ -8,8 +8,6 @@ module.exports = {
     const usernameAlt = `${firstName}.${lastName}${result.id}`;
     const email = `${firstName}.${lastName}@synk.io`;
     const emailAlt = `${firstName}.${lastName}${result.id}@synk.io`;
-    const date = new Date();
-    const password = `${firstName}${date.getFullYear()}?`;
 
     function getStaffId(seq, year = '00', program = 'SYNK') {
       let getZero = '';
@@ -32,7 +30,7 @@ module.exports = {
           lastName: result.lastName,
           username: usernameAlt,
           email: emailAlt,
-          password: password, //will be hashed automatically
+          password: 'faculty2022', //will be hashed automatically
           provider: 'local', //provider
           created_by: 1, //user admin id
           updated_by: 1, //user admin id
@@ -65,7 +63,7 @@ module.exports = {
         lastName: result.lastName,
         username: username,
         email: email,
-        password: password, //will be hashed automatically
+        password: 'faculty2022', //will be hashed automatically
         provider: 'local', //provider
         created_by: 1, //user admin id
         updated_by: 1, //user admin id

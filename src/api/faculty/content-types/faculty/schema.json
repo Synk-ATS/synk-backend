@@ -30,12 +30,6 @@
       "required": true,
       "unique": true
     },
-    "password": {
-      "type": "password",
-      "minLength": 8,
-      "required": true,
-      "private": true
-    },
     "gender": {
       "type": "enumeration",
       "enum": [
@@ -43,18 +37,6 @@
         "Female"
       ],
       "required": true
-    },
-    "department": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::department.department",
-      "inversedBy": "faculties"
-    },
-    "course": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::course.course",
-      "mappedBy": "faculty"
     },
     "avatar": {
       "type": "media",
@@ -75,6 +57,31 @@
     },
     "middleName": {
       "type": "string"
+    },
+    "designation": {
+      "type": "enumeration",
+      "enum": [
+        "Professor",
+        "Doctor",
+        "Lecturer"
+      ]
+    },
+    "program": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::program.program",
+      "inversedBy": "faculties"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "faculties"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::department.department"
     }
   }
 }

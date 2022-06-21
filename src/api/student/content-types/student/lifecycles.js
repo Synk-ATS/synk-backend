@@ -101,4 +101,23 @@ module.exports = {
 
     // console.log(entry);
   },
+  // async afterUpdate(event) {
+  //   const { result, params } = event;
+  //
+  //   const attendanceRecord = result.courses.map((c)=> ({
+  //     course: c.id,
+  //     daysPresent: 0,
+  //   }));
+  //
+  //   const serialized = JSON.stringify(attendanceRecord);
+  //
+  //   try {
+  //     await strapi.db.query('api::student.student').update({
+  //       where: { id: result.id },
+  //       data: { attendanceRecord: serialized }
+  //     });
+  //   } catch (e) {
+  //     //console.log(e);
+  //   }
+  // }
 };
